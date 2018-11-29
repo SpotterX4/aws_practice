@@ -10,9 +10,10 @@
   "author": "pehardy",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jasmine": "^3.3.0"
   },
   "devDependencies": {
-    "jasmine": "^3.3.0"
+    
   }
 }
