@@ -21,13 +21,17 @@ pipeline {
         }
         stage('Dockerize') {
             steps {
-                docker.build('pehardy_practice')
+                script {
+                    docker.build('pehardy_practice')
+                }
             }
         }
         stage('Send to ECR') {
             steps {
-                docker.withRegistry('974289754126.dkr.ecr.us-east-1.amazonaws.com/pehardy_practice', 'ecr:cae9743d-ac9a-47d7-820d-b8cb4deae8c2') {
-                    docker.image('pehardy_practice').push('latest')
+                script {
+                    docker.withRegistry('974289754126.dkr.ecr.us-east-1.amazonaws.com/pehardy_practice', 'ecr:cae9743d-ac9a-47d7-820d-b8cb4deae8c2') {
+                        docker.image('pehardy_practice').push('latest')
+                    }
                 }
             }
         }
