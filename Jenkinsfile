@@ -1,6 +1,7 @@
-tools { nodejs "NodeJS 11.4" }
-
 node {
+
+	env.NODEJS_HOME = "${tool 'NodeJS 11.4'}"
+	env.PATH = "${env.NODEJS_HOME}/bin:${env.PATH}"
 
 	stage 'Clone Git'
 	git 'https://github.com/SpotterX4/aws_practice.git'
